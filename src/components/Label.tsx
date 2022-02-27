@@ -10,7 +10,7 @@ export interface LabelProps {
    */
   color?: "primary" | "secondary" | "tertiary";
   /**
-   * This is the content of the label
+   * This is the color of the label
    */
   fontColor?: string;
   /**
@@ -21,6 +21,10 @@ export interface LabelProps {
    * These are the types of labels
    */
   size?: "normal" | "h1" | "h2" | "h3";
+  /**
+   * This is the background color of the label
+   */
+  backgroundColor?: string;
 }
 
 /**
@@ -32,10 +36,11 @@ export const Label = ({
   AllCaps = false,
   color   = "primary",
   fontColor = 'black',
+  backgroundColor = 'transparent',
   ...props
 }: LabelProps) => {
   return (
-    <span className={`label ${size} text-${color}`} style={{ color: fontColor }} >
+    <span className={`label ${size} text-${color}`} style={{ color: fontColor, backgroundColor }} >
       {AllCaps ? label.toLocaleUpperCase() : label}
     </span>
   );

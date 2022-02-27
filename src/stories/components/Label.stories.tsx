@@ -47,3 +47,11 @@ FontColor.args = {
     size: 'h1',
     fontColor: '#1d46d7'
 }
+
+export const BackgroundColor = Template.bind({});
+
+BackgroundColor.args = {
+    size: 'h1',
+    backgroundColor: 'black',
+    fontColor: 'white'
+}
