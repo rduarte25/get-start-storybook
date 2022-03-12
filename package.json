@@ -19,6 +19,10 @@
     "dist",
     "src"
   ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "typescript": "^4.5.5"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
@@ -34,11 +38,12 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "TODO: implement",
+    "build": "npm run clean && tsc && npm run copy-files",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=45ba2946996c",
-    "clean": "rimraf dist/"
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +71,15 @@
     "@storybook/react": "^6.4.18",
     "babel-loader": "^8.2.3",
     "copyfiles": "^2.4.1",
-    "rimraf": "^3.0.2"
-  }
+    "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.2"
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
 }
