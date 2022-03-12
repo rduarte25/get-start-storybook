@@ -1,7 +1,24 @@
 {
-  "name": "storybook",
+  "name": "rduarte-storybook-components",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "homepage": "https://rafael-duarte-briefcase.vercel.app/",
+  "repository": {
+    "url": "https://github.com/rduarte25/get-start-storybook",
+    "type": "git"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
@@ -17,10 +34,11 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "build-storybook",
+    "build": "TODO: implement",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=45ba2946996c"
+    "chromatic": "npx chromatic --project-token=45ba2946996c",
+    "clean": "rimraf dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +64,8 @@
     "@storybook/addon-essentials": "^6.4.18",
     "@storybook/addon-links": "^6.4.18",
     "@storybook/react": "^6.4.18",
-    "babel-loader": "^8.2.3"
+    "babel-loader": "^8.2.3",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
   }
 }
