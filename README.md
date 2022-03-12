@@ -9,7 +9,6 @@ or
 
 ```
 yarn add rduarte-storybook-components
-
 ```
 
 ### Demo:
